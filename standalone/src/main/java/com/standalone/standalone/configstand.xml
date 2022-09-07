@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    
+    <util:list list-class="java.util.LinkedList" 
+    
+     id="mybestfriends">
+    
+            <value>Pavan</value>
+            <value>Prakruthi</value>
+            <value>Megha</value>
+            <null/>
+
+    </util:list>
+    
+    <!-- stand alone map -->
+    
+    <util:map map-class="java.util.TreeMap" id = "fees">
+    
+    <entry key="springframe" value="800"/>
+    <entry key="Django" value="500"/>
+    <entry key="java core" value="300"/>
+   
+    </util:map>
+    
+    <!-- stand alone properties -->
+    <util:properties id="dbconfig">
+    <prop key="driver">com.pava.neenu</prop>
+    <prop key="username">pavan</prop>
+    <prop key="pasword">abc</prop>
+    <prop key="url">my:jd:/lo:550</prop>
+    </util:properties>
+    
+            
+            <bean name="person1" class="com.standalone.standalone.Person">
+            
+                <property name="friends" ref="mybestfriends"/>
+                <property name="feestructre" ref="fees"/>
+                <property name="properties" ref="dbconfig"/>
+            
+            </bean>
+            
+</beans>
